@@ -1,39 +1,29 @@
 package com.example.instant26
 
-import android.graphics.BitmapFactory
+import android.graphics.PointF
+
+
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
-import android.view.View
-import android.widget.ImageView
-import com.google.android.gms.vision.barcode.Barcode
-import com.google.android.gms.vision.barcode.BarcodeDetector
-import kotlinx.android.synthetic.main.content_scan_qr_code.*
+import android.widget.Toast
+import com.dlazaro66.qrcodereaderview.QRCodeReaderView
 
-
-class ScanQrCodeActivity : AppCompatActivity() {
-
+class ScanQrCodeActivity : AppCompatActivity(), QRCodeReaderView.OnQRCodeReadListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scan_qr_code)
-//        setSupportActionBar(toolbar)
 
 
-        buttonFoo.setOnClickListener { view ->
-            val myImageView = findViewById<View>(R.id.imgview) as ImageView
-            val myBitmap = BitmapFactory.decodeResource(
-                applicationContext.resources,
-                R.drawable.puppy
-            )
-            myImageView.setImageBitmap(myBitmap)
+        val qrCodeReaderView: QRCodeReaderView = findViewById(R.id.qrdecoderview);
+        qrCodeReaderView.setOnQRCodeReadListener(this);
+        qrCodeReaderView.setQRDecodingEnabled(true);
+        qrCodeReaderView.setAutofocusInterval(2000L)
 
-            val detector = BarcodeDetector.Builder(applicationContext)
-                .setBarcodeFormats(Barcode.QR_CODE)
-                .build()
-            if (!detector.isOperational) {
-                txtContent.setText("Could not set up the detector!")
-            }
-        }
+    }
+
+    override fun onQRCodeRead(text: String?, points: Array<out PointF>?) {
+        val makeText = Toast.makeText(this, text, Toast.LENGTH_SHORT)
+        makeText.show()
     }
 
 }

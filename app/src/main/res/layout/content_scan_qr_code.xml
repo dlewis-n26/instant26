@@ -9,19 +9,10 @@
         tools:showIn="@layout/activity_qr_generator"
         tools:context=".QrGeneratorActivity" tools:layout_editor_absoluteY="56dp">
 
-<TextView android:text=""
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/txtContent"/>
-<Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scan"
-        android:id="@+id/buttonFoo"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" android:layout_alignParentLeft="true"/>
-<ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imgview"/>
+    <com.dlazaro66.qrcodereaderview.QRCodeReaderView
+            android:id="@+id/qrdecoderview"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_margin="50dp"
+    />
 </android.widget.RelativeLayout>

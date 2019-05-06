@@ -4,6 +4,7 @@
           package="com.example.instant26">
 
     <dist:module dist:instant="true"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
             android:allowBackup="true"

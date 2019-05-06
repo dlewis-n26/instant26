@@ -1,10 +1,15 @@
 package com.example.instant26
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_scrolling.*
 
 class ScrollingActivity : AppCompatActivity() {
@@ -12,7 +17,20 @@ class ScrollingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scrolling)
         setSupportActionBar(toolbar)
-        fab.setOnClickListener { view ->
+
+        val textView = findViewById<TextView>(R.id.hello_text)
+        if (ContextCompat.checkSelfPermission(
+                this@ScrollingActivity,
+                android.Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this@ScrollingActivity,
+                arrayOf(Manifest.permission.CAMERA),
+                100
+            )
+        }
+        textView.setOnClickListener {
             val intent = Intent(this, QrGeneratorActivity::class.java).apply {
                 putExtra("key", "abcd")
             }
