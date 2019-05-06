@@ -28,6 +28,17 @@ class ScrollingActivity : AppCompatActivity() {
                 100
             )
         }
+        if (ContextCompat.checkSelfPermission(
+                this@ScrollingActivity,
+                android.Manifest.permission.INTERNET
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this@ScrollingActivity,
+                arrayOf(Manifest.permission.INTERNET),
+                100
+            )
+        }
         requestMoneyButton.setOnClickListener {
             val intent = Intent(this, MoneyRequestActivity::class.java)
             startActivity(intent)
