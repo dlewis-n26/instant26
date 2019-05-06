@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">instant26</string>
+    <string name="large_text">
+        "Hello"
+    </string>
+    <string name="action_settings">Settings</string>
+</resources>
