@@ -6,14 +6,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/activity_qr_generator"
-        tools:context=".QrGeneratorActivity" tools:layout_editor_absoluteY="56dp">
+        tools:showIn="@layout/activity_contact"
+        tools:context=".ContactActivity">
 
-
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/qr_code_image"
-            android:layout_centerHorizontal="true"
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+               android:id="@+id/contact_screen_image"
+               android:src="@drawable/contact_page"
+               android:scaleType="fitCenter"
+               android:contentDescription="Main screen image"
     />
 </android.widget.RelativeLayout>

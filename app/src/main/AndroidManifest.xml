@@ -4,6 +4,7 @@
           package="com.example.instant26">
 
     <dist:module dist:instant="true"/>
+
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
@@ -13,6 +14,16 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity
+                android:name=".MoneyRequestActivity"
+                android:label="@string/title_activity_money_request"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".ContactActivity"
+                android:label="@string/title_activity_contact"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
                 android:name=".QrGeneratorActivity"
                 android:label="@string/title_activity_qr_generator"

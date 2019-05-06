@@ -9,16 +9,14 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_scrolling.*
+import android.widget.Button
 
 class ScrollingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scrolling)
-        setSupportActionBar(toolbar)
 
-        val textView = findViewById<TextView>(R.id.hello_text)
+        val requestMoneyButton = findViewById<Button>(R.id.home_request_money)
         if (ContextCompat.checkSelfPermission(
                 this@ScrollingActivity,
                 android.Manifest.permission.CAMERA
@@ -30,17 +28,15 @@ class ScrollingActivity : AppCompatActivity() {
                 100
             )
         }
-        textView.setOnClickListener {
-            val intent = Intent(this, QrGeneratorActivity::class.java).apply {
-                putExtra("key", "abcd")
-            }
+        requestMoneyButton.setOnClickListener {
+            val intent = Intent(this, MoneyRequestActivity::class.java)
             startActivity(intent)
         }
-        scan.setOnClickListener { view ->
-            val intent = Intent(this, ScanQrCodeActivity::class.java).apply {
-            }
-            startActivity(intent)
-        }
+//        scan.setOnClickListener { view ->
+//            val intent = Intent(this, ScanQrCodeActivity::class.java).apply {
+//            }
+//            startActivity(intent)
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

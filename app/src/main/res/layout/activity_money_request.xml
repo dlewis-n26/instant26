@@ -5,8 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".ScrollingActivity">
+        tools:context=".ContactActivity">
 
-    <include layout="@layout/content_scrolling"/>
+    <include layout="@layout/content_money_request"/>
 
 </android.support.design.widget.CoordinatorLayout>
