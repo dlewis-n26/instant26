@@ -4,4 +4,5 @@
         "Hello"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_qr_generator">QrGeneratorActivity</string>
 </resources>

@@ -1,11 +1,10 @@
 package com.example.instant26
 
+import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_scrolling.*
 
 class ScrollingActivity : AppCompatActivity() {
@@ -13,12 +12,11 @@ class ScrollingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scrolling)
         setSupportActionBar(toolbar)
-        val imageView: ImageView = findViewById(R.id.imageView)
-        val bitmap = BitmapUtils().textToImageEncoder("gopinath")
-        imageView.setImageBitmap(bitmap)
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            val intent = Intent(this, QrGeneratorActivity::class.java).apply {
+                putExtra("key", "abcd")
+            }
+            startActivity(intent)
         }
     }
 

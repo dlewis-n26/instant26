@@ -13,6 +13,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:name=".QrGeneratorActivity"
+                android:label="@string/title_activity_qr_generator"
+                android:parentActivityName=".ScrollingActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.instant26.ScrollingActivity"/>
+        </activity>
+        <activity
                 android:name=".ScrollingActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
