@@ -18,6 +18,11 @@ class ScrollingActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
+        scan.setOnClickListener { view ->
+            val intent = Intent(this, ScanQrCodeActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
