@@ -26,4 +26,22 @@ public class HttpClient {
         }
         return "";
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public String get(String url, Callback callback) {
+        try {
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .url(url)
+                    .get()
+                    .build();
+
+            Call call = client.newCall(request);
+            call.enqueue(callback);
+
+
+        } catch (Exception e) {
+        }
+        return "";
+    }
 }

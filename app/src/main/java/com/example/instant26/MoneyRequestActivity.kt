@@ -17,10 +17,11 @@ class MoneyRequestActivity : AppCompatActivity() {
         val requestMessage = findViewById<EditText>(R.id.request_message_edit_text).text
         val amount = findViewById<TextView>(R.id.request_amount_edit_text).text
         val requestButton = findViewById<Button>(R.id.generate_qr_code_button)
+        val paymentId = "9564d3e5-77dd-4bb4-a43b-93e8f9ad821a"
 
         requestButton.setOnClickListener {
             val json = requestJson(
-                UUID.randomUUID().toString(),
+                paymentId,
                 "Gopinath",
                 "DE",
                 amount.toString().toLong(),
@@ -30,8 +31,8 @@ class MoneyRequestActivity : AppCompatActivity() {
             val intent = Intent(this, QrGeneratorActivity::class.java)
             intent.putExtra("data", json)
             startActivity(intent)
-
         }
+
     }
 
     fun requestJson(paymentId: String, name: String, iban: String, amount: Long, message: String) = """
