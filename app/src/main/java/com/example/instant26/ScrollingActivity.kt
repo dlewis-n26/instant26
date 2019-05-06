@@ -16,7 +16,6 @@ class ScrollingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scrolling)
 
-        val requestMoneyButton = findViewById<Button>(R.id.home_request_money)
         if (ContextCompat.checkSelfPermission(
                 this@ScrollingActivity,
                 android.Manifest.permission.CAMERA
@@ -39,15 +38,17 @@ class ScrollingActivity : AppCompatActivity() {
                 100
             )
         }
+        val requestMoneyButton = findViewById<Button>(R.id.home_request_money)
         requestMoneyButton.setOnClickListener {
             val intent = Intent(this, MoneyRequestActivity::class.java)
             startActivity(intent)
         }
-//        scan.setOnClickListener { view ->
-//            val intent = Intent(this, ScanQrCodeActivity::class.java).apply {
-//            }
-//            startActivity(intent)
-//        }
+        val payMoneyButton = findViewById<Button>(R.id.home_pay_money)
+        payMoneyButton.setOnClickListener { view ->
+            val intent = Intent(this, ScanQrCodeActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
