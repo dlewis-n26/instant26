@@ -7,6 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView
 
 class ScanQrCodeActivity : AppCompatActivity(), QRCodeReaderView.OnQRCodeReadListener {
@@ -26,6 +27,8 @@ class ScanQrCodeActivity : AppCompatActivity(), QRCodeReaderView.OnQRCodeReadLis
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onQRCodeRead(text: String?, points: Array<out PointF>?) {
         if (sent != 2) {
+            val makeText = Toast.makeText(this, ".", Toast.LENGTH_SHORT)
+            makeText.show()
             moveToConfirmationScreen(text)
         }
     }
