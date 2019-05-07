@@ -24,7 +24,7 @@ class MoneyRequestActivity : AppCompatActivity() {
             val paymentDto = PaymentDto(
                 paymentId,
                 "Gopinath",
-                "DE",
+                "DE89 3704 0044 0532 0130 00",
                 requestMessage.toString(),
                 amount.toString().toDouble()
             )
