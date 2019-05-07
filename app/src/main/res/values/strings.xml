@@ -13,4 +13,5 @@
     </string>
     <string name="title_activity_contact">ContactActivity</string>
     <string name="title_activity_money_request">MoneyRequestActivity</string>
+    <string name="title_activity_pay_confirmation">PayConfirmationActivity</string>
 </resources>

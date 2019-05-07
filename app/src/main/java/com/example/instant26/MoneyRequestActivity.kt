@@ -18,10 +18,7 @@ class MoneyRequestActivity : AppCompatActivity() {
         val requestMessage = findViewById<EditText>(R.id.request_message_edit_text).text
         val amount = findViewById<TextView>(R.id.request_amount_edit_text).text
         val requestButton = findViewById<Button>(R.id.generate_qr_code_button)
-        val paymentId = "9564d3e5-77dd-4bb4-a43b-93e8f9ad821a"
-
-
-
+        val paymentId = "14ad9fe9-0526-40e3-b7e1-e9d5e1cd8638"
 
         requestButton.setOnClickListener {
             val paymentDto = PaymentDto(

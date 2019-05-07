@@ -16,6 +16,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:name=".PayConfirmationActivity"
+                android:label="@string/title_activity_pay_confirmation"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
                 android:name=".MoneyRequestActivity"
                 android:label="@string/title_activity_money_request"
                 android:theme="@style/AppTheme.NoActionBar">

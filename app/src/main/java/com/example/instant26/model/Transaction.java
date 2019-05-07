@@ -6,6 +6,15 @@ public class Transaction {
 
     public boolean shown;
 
+    public Transaction() {
+
+    }
+
+    public Transaction(String sender, boolean shown) {
+        this.sender = sender;
+        this.shown = shown;
+    }
+
     public String getSender() {
         return sender;
     }

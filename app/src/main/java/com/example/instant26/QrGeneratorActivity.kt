@@ -1,9 +1,12 @@
 package com.example.instant26
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.support.annotation.RequiresApi
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ImageView
@@ -54,7 +57,9 @@ class QrGeneratorActivity : AppCompatActivity() {
         var shouldPoll = 1
 
         var finalText = ""
-        val handler = Handler()
+        val handler = Handler(Looper.getMainLooper())
+
+
         handler.postDelayed(
             Runnable {
                 while (shouldPoll == 1) {
@@ -65,9 +70,10 @@ class QrGeneratorActivity : AppCompatActivity() {
                                 if (string != null && string != "") {
                                     finalText = string
                                     shouldPoll = 2
+                                    updateUI(finalText)
                                     Log.v("qr", "succ-response")
                                 } else {
-                                    Log.v("qr", "no-response")
+                                    Log.v("qr", "no-response" + response.code() + response.body())
                                 }
                             }
 
@@ -77,9 +83,10 @@ class QrGeneratorActivity : AppCompatActivity() {
                             }
 
                         })
+                    Thread.sleep(2000)
                 }
             },
-            3000
+            5000
         )
 
 
@@ -90,6 +97,29 @@ class QrGeneratorActivity : AppCompatActivity() {
             Toast.makeText(this, "FAILED", Toast.LENGTH_SHORT).show()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    fun updateUI(finalText: String) {
+        this.runOnUiThread {
+
+            val updatedBalanceView = findViewById<TextView>(R.id.updated_balance_by_payer)
+            updatedBalanceView.text = finalText
+            Toast.makeText(this, "SUCCESS", Toast.LENGTH_SHORT).show()
+
+            val alertDialog = AlertDialog.Builder(this@QrGeneratorActivity).create()
+            alertDialog.setTitle("Payement Confirmation")
+            alertDialog.setMessage(finalText)
+            alertDialog.setButton(
+                AlertDialog.BUTTON_NEUTRAL, "OK"
+            ) { dialog, _ -> dialog.dismiss() }
+            alertDialog.show()
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, ScrollingActivity::class.java)
+        startActivity(intent)
     }
 
 }
