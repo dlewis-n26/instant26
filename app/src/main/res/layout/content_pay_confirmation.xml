@@ -14,12 +14,18 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
             android:id="@+id/payment_id_text_view"
     />
 
     <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
             android:id="@+id/payment_requester_name_text_view"
             android:layout_below="@+id/payment_id_text_view"
     />
@@ -27,6 +33,9 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
             android:id="@+id/payment_iban_text_view"
             android:layout_below="@+id/payment_requester_name_text_view"
     />
@@ -34,6 +43,9 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
             android:id="@+id/payment_amount_text_view"
             android:layout_below="@+id/payment_iban_text_view"
     />
