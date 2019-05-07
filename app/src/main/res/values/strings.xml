@@ -4,7 +4,7 @@
         "Hello"
     </string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_qr_generator">QrGeneratorActivity</string>
+    <string name="title_activity_qr_generator">Scan To Pay</string>
     <string name="title_activity_scan_qr_code">ScanQrCodeActivity</string>
     <string name="your_balanc">Your Balance\n$ 26.262,62</string>
     <string name="transaction">
