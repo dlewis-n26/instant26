@@ -31,6 +31,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/home_request_money"
                 android:text="REQUEST"
+                android:background="#9AA7ED"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_below="@+id/home_account_balance"
                 android:layout_marginTop="60dp"/>
@@ -40,6 +41,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/home_pay_money"
                 android:text="PAY"
+                android:background="#9AA7ED"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_below="@+id/home_request_money"
                 android:layout_marginTop="60dp"/>
