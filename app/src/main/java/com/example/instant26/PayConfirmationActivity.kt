@@ -1,5 +1,6 @@
 package com.example.instant26
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
@@ -70,7 +71,13 @@ class PayConfirmationActivity : AppCompatActivity() {
             alertDialog.setMessage("Money sent to $to")
             alertDialog.setButton(
                 AlertDialog.BUTTON_NEUTRAL, "OK"
-            ) { dialog, _ -> dialog.dismiss() }
+            ) { dialog, _ ->
+                dialog.dismiss()
+
+                val intent = Intent(this, ScrollingActivity::class.java)
+                intent.putExtra("new-amount", "70.0")
+                startActivity(intent)
+            }
             alertDialog.show()
         }
     }

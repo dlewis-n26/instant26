@@ -95,7 +95,13 @@ class QrGeneratorActivity : AppCompatActivity() {
             alertDialog.setMessage(finalText)
             alertDialog.setButton(
                 AlertDialog.BUTTON_NEUTRAL, "OK"
-            ) { dialog, _ -> dialog.dismiss() }
+            ) { dialog, _ ->
+                dialog.dismiss()
+
+                val intent = Intent(this, ScrollingActivity::class.java)
+                intent.putExtra("new-amount", "130.0")
+                startActivity(intent)
+            }
             alertDialog.show()
         }
     }

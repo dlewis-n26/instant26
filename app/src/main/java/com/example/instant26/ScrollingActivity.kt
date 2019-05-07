@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.TextView
 
 class ScrollingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +38,15 @@ class ScrollingActivity : AppCompatActivity() {
                 arrayOf(Manifest.permission.INTERNET),
                 100
             )
+
         }
+        val newAmount = intent.getStringExtra("new-amount")
+        if (newAmount != null) {
+            val accountBalance = findViewById<TextView>(R.id.home_account_balance)
+            accountBalance.text = "Balance: $newAmount €"
+        }
+
+
         val requestMoneyButton = findViewById<Button>(R.id.home_request_money)
         requestMoneyButton.setOnClickListener {
             val intent = Intent(this, MoneyRequestActivity::class.java)
