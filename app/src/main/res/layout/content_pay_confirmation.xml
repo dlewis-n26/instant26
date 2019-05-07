@@ -7,6 +7,9 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/activity_pay_confirmation"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="100dp"
         tools:context=".PayConfirmationActivity">
     <TextView
             android:layout_width="match_parent"
@@ -33,7 +36,7 @@
             android:layout_height="50dp"
             android:id="@+id/payment_confirm_button"
             android:layout_below="@+id/payment_amount_text_view"
-            android:background="#9AA7ED"
+            android:background="@drawable/roundedbutton"
             style="@style/Widget.AppCompat.Button.Colored"
             android:text="Send Money"
     />
