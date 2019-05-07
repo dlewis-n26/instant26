@@ -91,7 +91,7 @@ class QrGeneratorActivity : AppCompatActivity() {
     fun updateUI(finalText: String) {
         this.runOnUiThread {
             val alertDialog = AlertDialog.Builder(this@QrGeneratorActivity).create()
-            alertDialog.setTitle("Payement Confirmation")
+            alertDialog.setTitle("Payment Confirmation")
             alertDialog.setMessage(finalText)
             alertDialog.setButton(
                 AlertDialog.BUTTON_NEUTRAL, "OK"
