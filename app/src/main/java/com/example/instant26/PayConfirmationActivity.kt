@@ -11,6 +11,10 @@ import android.widget.TextView
 import com.example.instant26.http.HttpClient
 import com.example.instant26.model.PaymentDto
 import com.example.instant26.model.Transaction
+import com.fasterxml.jackson.databind.ObjectMapper
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.Response
 import java.io.IOException
 
 class PayConfirmationActivity : AppCompatActivity() {
