@@ -11,10 +11,6 @@ import android.widget.TextView
 import com.example.instant26.http.HttpClient
 import com.example.instant26.model.PaymentDto
 import com.example.instant26.model.Transaction
-import com.fasterxml.jackson.databind.ObjectMapper
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.Response
 import java.io.IOException
 
 class PayConfirmationActivity : AppCompatActivity() {
@@ -65,7 +61,7 @@ class PayConfirmationActivity : AppCompatActivity() {
         runOnUiThread {
             val alertDialog = AlertDialog.Builder(this@PayConfirmationActivity).create()
             alertDialog.setTitle("Payment Confirmation")
-            alertDialog.setMessage("Money Send to $to")
+            alertDialog.setMessage("Money sent to $to")
             alertDialog.setButton(
                 AlertDialog.BUTTON_NEUTRAL, "OK"
             ) { dialog, _ -> dialog.dismiss() }
