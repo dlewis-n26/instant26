@@ -8,7 +8,7 @@ import com.google.zxing.common.BitMatrix
 class BitmapUtils {
     internal fun textToImageEncoder(text: String): Bitmap? {
         val bitMatrix: BitMatrix
-        val lenght = 500
+        val lenght = 800
         try {
             bitMatrix = MultiFormatWriter().encode(text, BarcodeFormat.QR_CODE, lenght, lenght, null)
         } catch (eae: IllegalArgumentException) {

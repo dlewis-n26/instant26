@@ -7,17 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
-import android.widget.Toast
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView
-import com.example.instant26.http.HttpClient
-import com.example.instant26.model.PaymentDto
-import com.example.instant26.model.Transaction
-import com.fasterxml.jackson.databind.ObjectMapper
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.Response
-import java.io.IOException
 
 class ScanQrCodeActivity : AppCompatActivity(), QRCodeReaderView.OnQRCodeReadListener {
     var sent = 1
@@ -36,8 +26,6 @@ class ScanQrCodeActivity : AppCompatActivity(), QRCodeReaderView.OnQRCodeReadLis
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onQRCodeRead(text: String?, points: Array<out PointF>?) {
         if (sent != 2) {
-            val makeText = Toast.makeText(this, text, Toast.LENGTH_SHORT)
-            makeText.show()
             moveToConfirmationScreen(text)
         }
     }

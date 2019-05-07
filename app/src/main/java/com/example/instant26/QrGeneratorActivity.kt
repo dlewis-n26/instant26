@@ -11,11 +11,9 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.example.instant26.http.HttpClient
 import com.example.instant26.model.PaymentDto
 import com.fasterxml.jackson.databind.ObjectMapper
-import kotlinx.android.synthetic.main.activity_qr_generator.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
@@ -28,7 +26,6 @@ class QrGeneratorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qr_generator)
-        setSupportActionBar(toolbar)
 
         val intent = intent
         val message = intent.getStringExtra("data")
@@ -88,24 +85,11 @@ class QrGeneratorActivity : AppCompatActivity() {
             },
             5000
         )
-
-
-        if (shouldPoll == 2) {
-            updatedBalanceView.text = finalText
-            Toast.makeText(this, "SUCCESS", Toast.LENGTH_SHORT).show()
-        } else if (shouldPoll == 3) {
-            Toast.makeText(this, "FAILED", Toast.LENGTH_SHORT).show()
-        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     fun updateUI(finalText: String) {
         this.runOnUiThread {
-
-            val updatedBalanceView = findViewById<TextView>(R.id.updated_balance_by_payer)
-            updatedBalanceView.text = finalText
-            Toast.makeText(this, "SUCCESS", Toast.LENGTH_SHORT).show()
-
             val alertDialog = AlertDialog.Builder(this@QrGeneratorActivity).create()
             alertDialog.setTitle("Payement Confirmation")
             alertDialog.setMessage(finalText)

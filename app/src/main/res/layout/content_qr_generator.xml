@@ -10,18 +10,23 @@
         tools:context=".QrGeneratorActivity" tools:layout_editor_absoluteY="56dp">
 
 
+    <TextView android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:id="@+id/updated_balance_by_payer"
+              android:text="Scan To Pay"
+              android:gravity="center"
+              android:textSize="30dp"
+              android:layout_marginTop="150dp"
+    />
+
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/qr_code_image"
+            android:layout_below="@+id/updated_balance_by_payer"
+            android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
     />
 
-    <TextView android:layout_width="match_parent"
-              android:layout_height="50dp"
-              android:id="@+id/updated_balance_by_payer"
-              android:layout_below="@+id/qr_code_image"
-              android:text=""
-              android:layout_marginTop="20dp"
-    />
+
 </android.widget.RelativeLayout>
