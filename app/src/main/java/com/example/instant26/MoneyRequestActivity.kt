@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import java.util.*
+import com.example.instant26.model.PaymentDto
+import com.fasterxml.jackson.databind.ObjectMapper
 
 class MoneyRequestActivity : AppCompatActivity() {
 
@@ -19,14 +20,18 @@ class MoneyRequestActivity : AppCompatActivity() {
         val requestButton = findViewById<Button>(R.id.generate_qr_code_button)
         val paymentId = "9564d3e5-77dd-4bb4-a43b-93e8f9ad821a"
 
+
+
+
         requestButton.setOnClickListener {
-            val json = requestJson(
+            val paymentDto = PaymentDto(
                 paymentId,
                 "Gopinath",
                 "DE",
-                amount.toString().toLong(),
-                requestMessage.toString()
+                requestMessage.toString(),
+                amount.toString().toDouble()
             )
+            val json = ObjectMapper().writeValueAsString(paymentDto)
 
             val intent = Intent(this, QrGeneratorActivity::class.java)
             intent.putExtra("data", json)
