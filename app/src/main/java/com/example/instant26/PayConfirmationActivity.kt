@@ -29,13 +29,11 @@ class PayConfirmationActivity : AppCompatActivity() {
 
         val value = ObjectMapper().readValue(message, PaymentDto::class.java)
 
-        val paymentId = findViewById<TextView>(R.id.payment_id_text_view)
         val iban = findViewById<TextView>(R.id.payment_iban_text_view)
         val requesterName = findViewById<TextView>(R.id.payment_requester_name_text_view)
         val amount = findViewById<TextView>(R.id.payment_amount_text_view)
         val button = findViewById<Button>(R.id.payment_confirm_button)
 
-        paymentId.text = "Id: ${value.id}"
         requesterName.text = "Requester: ${value.requestor}"
         iban.text = "IBAN: ${value.iban}"
         amount.text = "Amount: ${value.amount.toString()} EUR"
