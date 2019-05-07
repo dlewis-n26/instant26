@@ -39,7 +39,7 @@ class PayConfirmationActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             val paymentDto = ObjectMapper().readValue(message, PaymentDto::class.java)
-            val t = Transaction("ABCD", false)
+            val t = Transaction("Lukas", false)
             val tString = ObjectMapper().writeValueAsString(t)
             HttpClient().post("https://cryptic-ravine-63583.herokuapp.com/payments/${paymentDto.id}/transactions",
                 tString,
